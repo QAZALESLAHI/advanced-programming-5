@@ -1,0 +1,192 @@
+#تعریف یک تابع ساده
+def greet():
+    print("Hello from a function")
+
+greet()
+
+# فراخوانی چندباره تابع
+def my_function():
+    print("Hello from a function")
+
+my_function()
+my_function()
+my_function()
+# 3) تبدیل فارنهایت به سانتی‌گراد بدون تابع
+temp1 = 77
+celsius1 = (temp1 - 32) * 5 / 9
+print(celsius1)
+
+temp2 = 95
+celsius2 = (temp2 - 32) * 5 / 9
+print(celsius2)
+
+temp3 = 50
+celsius3 = (temp3 - 32) * 5 / 9
+print(celsius3)
+# 4) تبدیل فارنهایت به سانتی‌گراد با تابع
+def fahrenheit_to_celsius(fahrenheit):
+    return (fahrenheit - 32) * 5 / 9
+
+print(fahrenheit_to_celsius(77))
+print(fahrenheit_to_celsius(95))
+print(fahrenheit_to_celsius(50))
+
+
+# 5) تابع با مقدار بازگشتی
+def get_greeting():
+    return "Hello from a function"
+
+message = get_greeting()
+print(message)
+
+
+# 6) استفاده مستقیم از مقدار بازگشتی تابع
+def get_greeting():
+    return "Hello from a function"
+
+print(get_greeting())
+# 7) تورفتگی و محدوده تابع
+def greet():
+    print('Hello World!')
+
+# call the function
+greet()
+
+print('Outside function')
+
+# 8) دستور pass در if
+n = 10
+
+if n > 10:
+    pass
+
+print('Hello')
+
+# 9) استفاده از pass در تعریف تابع
+def future_function():
+    pass
+
+future_function()
+
+
+# 10) تابع با دو آرگومان
+def add_numbers(num1, num2):
+    sum = num1 + num2
+    print("Sum:", sum)
+
+add_numbers(5, 4)
+
+# 11) تابع با یک آرگومان
+def greet(name):
+    print("Hello", name)
+
+greet("John")
+
+# 12) پارامتر در مقابل آرگومان
+def my_function(name):  # parameter
+    print("Hello", name)
+
+my_function("Emil")  # argument
+
+# 13) تعداد آرگومان‌ها
+def my_function(fname, lname):
+    print(fname + " " + lname)
+
+my_function("Emil", "Refsnes")
+
+# 14) مقدار پیش‌فرض آرگومان
+def my_function(name="friend"):
+    print("Hello", name)
+
+my_function("Emil")
+my_function("Tobias")
+my_function()
+my_function("Linus")
+
+# 15) ارسال لیست به تابع
+def my_function(fruits):
+    for fruit in fruits:
+        print(fruit)
+
+my_fruits = ["apple", "banana", "cherry"]
+my_function(my_fruits)
+
+# 16) ارسال دیکشنری به تابع
+def my_function(person):
+    print("Name:", person["name"])
+    print("Age:", person["age"])
+
+my_person = {"name": "Emil", "age": 25}
+my_function(my_person)
+
+# 17) متغیر محلی
+def greet():
+    message = 'Hello'
+    print('Local', message)
+
+greet()
+# print(message)  # این خط خطا می‌دهد
+
+# 18) متغیر سراسری
+message = 'Hello'
+
+def greet():
+    print('Local', message)
+
+greet()
+print('Global', message)
+
+# 20) تابع درون تابع
+def myfunc():
+    x = 300
+    def myinnerfunc():
+        print(x)
+    myinnerfunc()
+
+myfunc()
+
+# 19) متغیر nonlocal در توابع تو در تو
+def outer():
+    message = 'local'
+
+    def inner():
+        nonlocal message
+        message = 'nonlocal'
+        print("inner:", message)
+
+    inner()
+    print("outer:", message)
+
+outer()
+
+# 21) تابع بازگشتی (شمارش معکوس)
+def countdown(n):
+    if n <= 0:
+        print("Done!")
+    else:
+        print(n)
+        countdown(n - 1)
+
+countdown(5)
+
+# 22) فاکتوریل با بازگشت
+def factorial(n):
+    if n == 0 or n == 1:
+        return 1
+    else:
+        return n * factorial(n - 1)
+
+print(factorial(5))
+
+# 23) دنباله فیبوناچی با بازگشت
+def fibonacci(n):
+    if n <= 1:
+        return n
+    else:
+        return fibonacci(n - 1) + fibonacci(n - 2)
+
+print(fibonacci(7))
+
+# 24) تابع input در پایتون
+name = input("Enter your name: ")
+print("Hello, " + name)
